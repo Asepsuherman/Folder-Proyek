@@ -1,0 +1,714 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+nav{
+    display: flex;
+    background-color: rgb(39, 39, 39);
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 50px;
+    align-items: center;
+    color: #e6e6e6;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+}
+nav .logo{
+    font-family: 'Pacifico', cursive;
+    font-size: 20px;
+    letter-spacing: 3px;
+}
+nav ul{
+    display: flex;
+    list-style: none;
+    width: 30%;
+    justify-content: space-between;
+}
+nav ul li a{
+    color: #e6e6e6;
+    text-decoration: none;
+    font-size: 0.8em;
+}
+nav ul li a:hover{
+    color: #739dff;
+}
+
+/*Hamburger menu*/
+.menu-toggle{
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+}
+.menu-toggle input{
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    opacity: 0;
+    left: -6px;
+    top: -3px;
+    cursor: pointer;
+    z-index: 2;
+}
+.menu-toggle span{
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: #e6e6e6;
+    border-radius: 3px;
+    transition: 0.5s;
+}
+
+
+/*Hamburger menu animation*/
+.menu-toggle span:nth-child(2){
+    transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4){
+    transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2){
+    transform: rotate(45deg)translate(-1px, -1px);
+    background-color: white;
+}
+.menu-toggle input:checked ~ span:nth-child(3){
+    transform: scale(0);
+    opacity: 0;
+}
+.menu-toggle input:checked ~ span:nth-child(4){
+    transform: rotate(-45deg)translate(-1px, 0);
+    background-color: white;
+}
+
+/*Responsive Breakpoint*/
+/*Ukuran tablet*/
+@media(min-width: 768px) and (max-width:1024px){
+    nav ul{
+        width: 50%;
+    }
+}
+
+/*Ukuran mobile*/
+@media only screen and (min-width: 200px) and (max-width: 767px){
+    .menu-toggle{
+        display: flex;
+    }
+    nav ul{
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 80%;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: rgb(39, 39, 39);
+        z-index: -1;
+        transform: translateX(100%);
+        transition: all 1.5s;
+        opacity: 0;
+    }
+    nav ul.slide{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+
+
+main{
+    height: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.content{
+    background-color: #739dff;
+    width: 100%;
+    padding: 40px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    box-shadow: 0 5px 5px -5px rgb(39, 39, 39);
+    z-index: 1;
+}
+.main-content1{
+    text-align: center;
+    width: 300px;
+    height: 250px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.main-content2{
+    text-align: center;
+    position:relative;
+    width: 450px;
+    height: 250px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.main-content1 img{
+    width: 95%;
+    height: 190px;
+    margin: auto;
+}
+.main-content1 h4{
+    color: #FFFFFF;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    margin-top: 15px;
+}
+.main-content2 h3{
+    color: #FFFFFF;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    margin-top: 45px;
+}
+.main-content2 h4{
+    color: #FFFFFF;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    margin-top: 30px;
+    margin-bottom: 35px;
+    font-weight: normal;
+}
+.btn{
+    display: flex;
+    padding: 5px 10px;
+    margin: auto;
+    width: 70px;
+    color: #FFFFFF;
+    font-size: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    border-radius: 10px;
+    box-shadow: -2px 3px 6px rgb(31, 31, 31);
+    background-color: #FD5E46;
+}
+.btn:active{
+    box-shadow: none;
+    position: relative;
+    top: 2px;
+}
+.about{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #f8f8f8;
+}
+.paragraf{
+    padding: 10px;
+    margin: 10px 0;
+    text-align: center;
+}
+.paragraf h3{
+    color: #616161;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+.paragraf p{
+    color: #616161;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+article{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #f8f8f8;
+}
+.wadah{
+    margin: 20px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.wadah ul{
+    margin-top: 40px;
+    padding: 10px;
+}
+.kumpulan-buku{
+    color: #616161;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+.item{
+    list-style: none;
+    padding: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+}
+.item.satu{
+    text-align: left;
+    justify-content: flex-end;
+}
+.item.dua{
+    text-align: right;
+    justify-content: flex-start;
+}
+.bungkus{
+    flex-grow: 2;
+    padding: 20px 10px;
+}
+.bungkus p{
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 17px;
+    margin-bottom: 25px;
+}
+.search{
+    background-color: #FD5E46;
+    border-radius: 10px;
+    padding: 5px 10px;
+    color: #FFFFFF;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    text-decoration: none;
+    box-shadow: -2px 3px 6px rgb(31, 31, 31);
+}
+.search.left:active{
+    box-shadow: none;
+    position: relative;
+    top: 2px;
+}
+.search.right:active{
+    box-shadow: none;
+    position: relative;
+    top: 2px;
+}
+.matpel{
+    margin-bottom: 30px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.gambar{
+    width: 200px;
+    height: 200px;
+}
+aside{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #739dff;
+    box-shadow: 0 -5px 5px -5px rgb(39, 39, 39);
+}
+.contact{
+    width: 850px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+}
+.contact h3{
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    margin-top: 25px;
+    margin-bottom: 40px;
+    text-align: center; 
+}
+.content-form{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #e6e6e6;
+    border: 5px solid #d1d1d1;
+}
+form div{
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+form div h4{
+    width: 80px;
+    height: 20px;
+    padding: 5px;
+    color: #616161;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+form div input{
+    display: flex;
+    height: 30px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+    border: 3px solid #d1d1d1;
+}
+.submit{
+    display: flex;
+    height: 40px;
+    width: 100px;
+    border-radius: 5px;
+    box-shadow: -2px 3px 6px rgb(31, 31, 31);
+    background-color: #FD5E46;
+    padding: 5px 10px;
+    margin: auto;
+    color: #FFFFFF;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    justify-content: center;
+    letter-spacing: 2px;
+    border: none;
+}
+.submit:active{
+    box-shadow: none;
+    position: relative;
+    top: 2px;   
+}
+form div textarea{
+    display: flex;
+    height: 200px;
+    padding: 5px;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    border: 3px solid #d1d1d1;
+}
+.profile{
+    width: 850px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 25px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    height: 400px;
+}
+.profile h3{
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    margin-top: 25px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+.container-profile{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #e6e6e6;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.container-profile img{
+    border-radius: 10px;
+    width: 140px;
+    height: 170px;
+}
+.kotak{
+    border-radius: 10px;
+    width: 650px;
+    height: 170px;
+    text-align: center;
+}
+.kotak h4{
+    color: #616161;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    margin-top: 30px;
+    line-height: 20px;
+}
+.kotak h3{
+    color: rgb(39, 39, 39);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: rgb(39, 39, 39);
+}
+.isi-footer{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+    width: 100%;
+    justify-content: space-between;
+}
+.foot{
+    margin: 10px 0;
+    padding: 10 ;
+    display: flex;
+    flex-direction: column;
+}
+.foot.logo{
+    justify-content: center;
+}
+.foot.logo h2{
+    font-size: 30px;
+    color: #e6e6e6;
+}
+.foot.logo h4{
+    font-size: 12px;
+    color: #e6e6e6;
+}
+
+.foot.copyright {
+    align-self: flex-end;
+    color: #e6e6e6;
+    font-size: 12px;
+}
+
+.foot.dukung{
+    color: #e6e6e6;
+    padding: 5px;
+    font-size: 12px;
+}
+.cont-ul{
+    padding-left: 20px;
+}
+.social{
+    list-style: none;
+}
+.social h3 a{
+    color: #e6e6e6;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+.social h3 a:hover{
+    color:  #739dff;
+}
+
+
+/*Tampilan Tablet*/
+@media(min-width: 768px) and (max-width:1024px){
+    .item.satu{
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .item.dua{
+        flex-direction: column;
+        text-align: center;
+    }
+    .item.satu img{
+        width: 50%;
+        height: 50%;
+        margin: auto;
+    }
+    .item.dua img{
+        width: 50%;
+        height: 50%;
+        margin: auto;
+    }
+    .contact{
+        width: 100%;
+        align-items: center;
+        flex-direction: column;
+    }
+    .content-form{
+        width: 80%;
+        height: auto;
+        align-items: center;
+    }
+    .profile{
+        width: 100%;
+        align-items: center;
+        flex-direction: column;
+    }
+    .container-profile{
+        width: 86%;
+        height: auto;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+    .content-form{
+        width: 90%;
+    }
+    .container-profile img{ 
+       margin-right: 2.5px;
+    }
+    .kotak{
+        margin-left: 2.5px;
+    }
+    .kotak h4{
+        margin-top: 10px;
+    }
+    div .submit{
+        font-size: 12px;
+        width: 70px;
+        height: 30px;
+    }
+    .foot.logo h2{
+        font-size: 20px;
+    }
+    
+}
+
+
+
+/*Tampilan smartphone*/
+@media only screen and (min-width: 200px) and (max-width: 767px){
+    .logo h4{
+        font-size: 15px;
+    }
+    .menu-toggle input{
+        z-index: 50;
+    }
+    .main-content1 h4{
+        font-size: 15px;
+    }
+    .main-content2{
+        width: 300px;
+        height: 300px;
+    }
+    .main-content2 h3{
+        font-size: 17px;
+    }
+    .main-content2 h4{
+        font-size: 12px;
+    }
+    .paragraf h3{
+        font-size: 18px;
+    }
+    .kumpulan-buku{
+        font-size: 18px;
+    }
+    .item.satu{
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+    }
+    .item.satu img{
+        width: 150px;
+        height: 150px;
+    }
+    .item.dua{
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .item.dua img{
+        width: 150px;
+        height: 150px;
+    }
+    .profile{
+        width: 100%;
+        height: 700px;
+        align-items: center;
+        flex-direction: column;
+        margin-top: -20px;
+    }
+    .profile h3{
+        font-size: 18px;
+        margin-top: -15px;
+    }
+    .container-profile{
+        width: 72.5%;
+        align-items: center;
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+    .container-profile img{
+        width: 140px;
+        height: 170px;
+        align-items: center;
+        flex-wrap: nowrap;
+        margin: 10px 10px 0 10px;
+    }
+    .container-profile .kotak{
+        width: 80%;
+        margin: 20px 10px;
+    }
+    .kotak h4{
+        margin: 5px;
+        font-size: 10px;
+    }
+    .kotak h3{
+        font-size: 15px;
+        margin: 10px;
+    }
+    .contact{
+        width: 80%;
+        align-items: center;
+    }
+    .contact h3{
+        width: 50%;
+        align-items: center;
+        font-size: 18px;
+    }
+    form div h4{
+        font-size: 15px;
+    }
+    form div input{
+        font-size: 10px;
+    }
+    .content-form{
+        width: 90%;
+    }
+    div .submit{
+        font-size: 12px;
+        width: 70px;
+        height: 30px;
+    }
+    .foot.logo h2{
+        font-size: 15px;
+    }
+    .foot.logo h4{
+        font-size: 10px;
+    }
+    .foot.copyright h3{
+        font-size: 10px;
+    }
+    .foot.dukung{
+        font-size: 10px;
+    }
+    .social h3 a{
+        font-size: 9px;
+    }
+}
+
+/*Antisipasi posisi footer item*/
+@media(min-width: 200px) and (max-width: 415px){
+    .isi-footer{
+        margin: 5px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .foot.copyright{
+        align-self:center;
+    }
+    .container-profile .kotak{
+        width: 80%;
+        margin: 20px 10px;
+        height: 80%;
+    }
+    
+}
